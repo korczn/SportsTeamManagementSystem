@@ -81,3 +81,42 @@ public class Team : ITeamStatistics
         return players.Average(p => p.Score);
     }
 }
+
+public static class Program
+{
+    public static void Main(string[] args)
+    {
+        Team team = new Team(); // Tworzenie nowej drużyny (TU COMMIT)
+
+        // Inicjalizowanie początkowych graczy do drużyny
+        team.AddPlayer(new Player("Cycuś", 100, "Bramkarz"));
+        team.AddPlayer(new Player("Prosiaczek", 80, "Napastnik"));
+        team.AddPlayer(new Player("Kotlecik", 95, "Skrzydłowy"));
+        team.AddPlayer(new Player("Robercik", 70, "Napastnik"));
+
+        // Wyświetlanie początkowego składu
+        Console.WriteLine("\nInitial Team:");
+        team.DisplayTeam();
+
+        // Statystyki drużyny
+        team.DisplayStatistics();
+
+        // Usuwanie jednego z graczy (można oczywiście więcej)
+        team.RemovePlayer("Cycuś");
+
+        // Wyświetlenie drużyny po usunięciu gracza/y
+        Console.WriteLine("\nTeam After Removal:");
+        team.DisplayTeam();
+
+        // Dodawanie graczy do drużyny
+        team.AddPlayer(new Player("Stomilowiec", 1, "Asystent"));
+        team.AddPlayer(new Player("Maurycy", 150, "Cheerleader"));
+
+        // Zaktualizowana drużyna
+        Console.WriteLine("\nTeam After Adding a New Player:");
+        team.DisplayTeam();
+
+        // Końcowe statystyki drużyny
+        team.DisplayStatistics();
+    }
+}
