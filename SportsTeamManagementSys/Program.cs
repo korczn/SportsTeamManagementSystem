@@ -23,3 +23,10 @@ public class Player
         return $"Name: {Name}, Score: {Score}, Position: {Position}";
     }
 }
+
+// Interfejs z funkcjami statystyk drużyny
+public interface ITeamStatistics
+{
+    void DisplayStatistics();  // Wyświetlanie statystyk metodą
+    double CalculateAverageScore(); // Obliczanie średniej statystyk metodą
+}
